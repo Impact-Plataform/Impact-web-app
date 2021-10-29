@@ -7,7 +7,7 @@ output.classList.add("output");
 
 
 function check() {
-  if (email.value.indexOf("@") == -1) {
+  if (email.value.indexOf("@") == -1 && email.value.indexOf('.') == -1) {
     output.innerHTML = "Preencha os campos corretamentes";
     email.parentNode.insertBefore(output, entrar);
     email.classList.add("error");
