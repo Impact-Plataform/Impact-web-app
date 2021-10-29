@@ -4,8 +4,6 @@ let password = document.querySelector("#password");
 let output = document.createElement("span");
 output.classList.add("output");
 
-
-
 function check() {
   if (email.value.indexOf("@") == -1 && email.value.indexOf('.') == -1) {
     output.innerHTML = "Preencha os campos corretamentes";
@@ -33,26 +31,30 @@ document.querySelectorAll('input').forEach(input => input.addEventListener("blur
 entrar.addEventListener("click", async e => {
   e.preventDefault();
   check();
+
   const credenciais = {
     email: email.value,
     password: password.value
   }
-  let ret = await fetch('http://localhost:5000/user/signin', {
+
+  let ret = await fetch('http://localhost:3000/user/signin', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
     },
     body: JSON.stringify(credenciais)
   })
+
   let retJson = await ret.json()
+
   if (ret.status === 200) { 
-    window.localStorage.setItem('token', retJson.token)
-    window.location.href = './dash.html'
-  }
-  else { 
+    window.sessionStorage.setItem('token', retJson.token)
+    window.sessionStorage.setItem('user', retJson.user.name)
+    window.sessionStorage.setItem('userType', retJson.user.type)
+    window.location.href = './dashboard.html'
+  } else { 
     output.innerHTML = retJson.message
     password.parentNode.insertBefore(output, entrar);
   }
- 
 
 });

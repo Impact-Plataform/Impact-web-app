@@ -1,0 +1,117 @@
+.header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: orange;
+  padding: 8vmin;
+  border: solid;
+  border-color: black;
+}
+
+.container {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  width: 23vmin;
+  top: -30px;
+  left: -30px;
+  display: inline;
+  float: left;
+}
+
+.h1 {
+  position: absolute;
+  font-size: 4vmin;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  top: 40px;
+  left: 520px;
+}
+
+.btn-house {
+  position: absolute;
+  width: 23vmin;
+  top: -35px;
+  right: -130px;
+  font-size: 40px;
+}
+
+.menu {
+  font-size: 40px;
+}
+
+#check {
+  display: none;
+}
+
+nav {
+  background-color: black;
+  width: 200px;
+  height: 87.1%;
+  position: absolute;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 20px 5px;
+}
+
+.link:hover {
+  background-color: white;
+  color: black;
+}
+
+label {
+  padding: 15px;
+  position: absolute;
+}
+
+.icons {
+  font-size: 40px;
+  margin-right: 0 100px;
+}
+
+.btn-adcionar-aluno {
+  position: absolute;
+  border: solid;
+  border-color: black;
+  background-color: orange;
+  left: 200px;
+  width: 250px;
+  border-radius: 10px;
+  left: 300px;
+  top: 130px;
+  color: black;
+}
+
+.procurar {
+  position: absolute;
+  left: 900px;
+  width: 30%;
+  top: 130px;
+}
+
+.procurar-aluno {
+  padding: 10px;
+  border: solid;
+}
+
+.barra-alunos {
+  position: absolute;
+  width: 80%;
+  top: 250px;
+  left: 240px;
+  border-radius: 10px;
+}
+
+.barra-alunos-estilo {
+  margin-right: 300px;
+}
+
+.barra-alunos-cor {
+  color: white;
+}
