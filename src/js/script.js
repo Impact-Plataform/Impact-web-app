@@ -28,9 +28,31 @@ function check() {
   return true;
 }
 
-document.querySelectorAll('input').forEach(input =>input.addEventListener("blur", () => check()));
+document.querySelectorAll('input').forEach(input => input.addEventListener("blur", () => check()));
 
-entrar.addEventListener("click", e => {
-    e.preventDefault();
-    check();
+entrar.addEventListener("click", async e => {
+  e.preventDefault();
+  check();
+  const credenciais = {
+    email: email.value,
+    password: password.value
+  }
+  let ret = await fetch('http://localhost:5000/user/signin', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(credenciais)
+  })
+  let retJson = await ret.json()
+  if (ret.status === 200) { 
+    window.localStorage.setItem('token', retJson.token)
+    window.location.href = './dash.html'
+  }
+  else { 
+    output.innerHTML = retJson.message
+    password.parentNode.insertBefore(output, entrar);
+  }
+ 
+
 });
