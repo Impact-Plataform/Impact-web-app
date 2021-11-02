@@ -19,18 +19,42 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--orange);
+  background-color: var(--orange,orange);
   padding: 2rem;
 }
 .logo {
   object-fit: contain;
   width: 10rem;
 }
+.logout > img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
 .menu{
   grid-area: nav;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem .5rem 3rem;
+}
+.menu-list {
+  display: grid;
+  grid-template-columns: 80%;
+  row-gap: 1rem;
+  justify-content: center;
+}
+
+.menu  a {
+  display: block;
+  background-color: var(--orange,orange);
+  border-radius: 15px;
+  text-decoration: none;
+  text-align: center;
+  padding-block: .5rem;
+  color: white;
 }
 .principal {
   grid-area: main;
-  border: 1px solid red;
 }
