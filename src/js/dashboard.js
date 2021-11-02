@@ -1,4 +1,4 @@
-document.onreadystatechange = () => {
+/* document.onreadystatechange = () => {
   if (window.sessionStorage.getItem('token') === null) {
     window.location.href = 'login.html';
   }
@@ -6,4 +6,4 @@ document.onreadystatechange = () => {
 
 let admin = document.querySelector('#admin');
 
-admin.innerHTML = window.sessionStorage.getItem('user');
+admin.innerHTML = window.sessionStorage.getItem('user'); */
