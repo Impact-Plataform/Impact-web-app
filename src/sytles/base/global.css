@@ -1,0 +1,36 @@
+:root{
+  /* --orange:#eb7b3c; */
+}
+body{
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: 10vh 1fr;
+  grid-template-areas:
+    "header header"
+    "nav main";
+  min-height: 100vh;
+}
+* {
+  box-sizing: border-box;
+}
+.header {
+  grid-area: header;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: orange;
+  padding: 2rem;
+}
+.logo {
+  object-fit: contain;
+  width: 10rem;
+}
+.menu{
+  grid-area: nav;
+  background-color: black;
+}
+.principal {
+  grid-area: main;
+  border: 1px solid red;
+}
