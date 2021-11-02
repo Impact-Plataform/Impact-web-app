@@ -4,10 +4,8 @@ let password = document.querySelector("#password");
 let output = document.createElement("span");
 output.classList.add("output");
 
-
-
 function check() {
-  if (email.value.indexOf("@") == -1) {
+  if (email.value.indexOf("@") == -1 && email.value.indexOf('.') == -1) {
     output.innerHTML = "Preencha os campos corretamentes";
     email.parentNode.insertBefore(output, entrar);
     email.classList.add("error");
@@ -28,9 +26,35 @@ function check() {
   return true;
 }
 
-document.querySelectorAll('input').forEach(input =>input.addEventListener("blur", () => check()));
+document.querySelectorAll('input').forEach(input => input.addEventListener("blur", () => check()));
 
-entrar.addEventListener("click", e => {
-    e.preventDefault();
-    check();
+entrar.addEventListener("click", async e => {
+  e.preventDefault();
+  check();
+
+  const credenciais = {
+    email: email.value,
+    password: password.value
+  }
+
+  let ret = await fetch('http://localhost:3000/user/signin', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(credenciais)
+  })
+
+  let retJson = await ret.json()
+
+  if (ret.status === 200) { 
+    window.sessionStorage.setItem('token', retJson.token)
+    window.sessionStorage.setItem('user', retJson.user.name)
+    window.sessionStorage.setItem('userType', retJson.user.type)
+    window.location.href = './dashboard.html'
+  } else { 
+    output.innerHTML = retJson.message
+    password.parentNode.insertBefore(output, entrar);
+  }
+
 });
