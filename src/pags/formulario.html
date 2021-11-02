@@ -11,7 +11,7 @@
     <!-- <link rel="stylesheet" href="./src/styles/main.css"> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/src/pags/dashboard.css">
+    <link rel="stylesheet" href="formulario.css">
     <link rel="stylesheet" href="/src/sytles/base/global.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela-1</title>
@@ -20,97 +20,110 @@
 <bodyd>
 
     <header class="header">
-        <div class="container">
-            <button class='btn btn-lg btn-house ' style='background-color:transparent;'
-                onclick="location.href='http://google.com';">
-                <div style='text-align:center;'><i class="bi bi-house-door"></i></div>
-            </button>
-            <img src="fundo-transparente-branco.png" class="logo">
-        </div>
-        <h1 id="admin" class="h1"></h1>
+    
     </header>
 
 
 
     <nav>
-        <ul class="menu-list">
-            <li><a href="" class="link"><i class="bi bi-person-fill icons"></i> ALUNOS</a></li>
-            <li><a href="" class="link"><i class="bi bi-star  icons"></i> JEDIS</a></li>
-            <li><a href="" class="link"><i class="bi bi-person-workspace icons"></i> MENTORES</a></li>
-            <li><a href="" class="link"><i class="bi bi-pencil icons"></i> USUÁRIOS</a></li>
-
-        </ul>
+        <!-- LATERAL PRETA -->
     </nav>
 
-    <button type="button" class="btn btn-secondary btn-lg btn-adcionar-aluno"><i class="bi bi-plus-lg"></i>Adcionar
-        Aluno</button>
+    <main>
+        <form class="form">
+            
+           <label for="nomesobrenome" class="label">Nome e Sobrenome:</label>
+           <input type="text" id="nomesobrenome" class="input-padrao" required placeholder="Nome Sobrenome">
+
+
+          <label for="enereco" class="label">Endereço:</label>
+          <input type="text" id="endereco" class="input-padrao" required placeholder="Rua, AV Número...">
+
+          <label for="cidade" class="label">Cidade de nascimento</label>
+          <input type="text" id="cidade" class="input-padrao" required placeholder="Ex: Rio de janeiro...">
+
+           
+           
+          <label for="data" class="label">Data de nascimento</label>
+          <input type="date" id="data" required class="input-padrao">
+        
+
+
+        <fieldset >
+           <label class="label">Escolaridade</label>
+             <select>
+              <option>Fundamental Incompleto</option>
+              <option>Fundamental Completo</option>
+              <option>Ensino Médio Incompleto</option>
+              <option>Ensino Médio Completo</option>
+              <option>Ensino Superior Incompleto</option>
+              <option>Ensino Superior Completo</option>
+             </select>
+
+
+            
+            
+            <label class="label">Mora com quantas pessoas?</label> 
+              <select>
+               <option>Sozinho</option>
+               <option>1</option>
+               <option>2</option>
+               <option>3</option>              
+               <option>4</option>
+               <option>5+</option>
+              </select>
+
+
+             <label class="label">Situação de emprego</label>
+              <select>
+                <option>Empregado</option>
+                <option>Desempregado</option>
+              </select> 
+
+              <label class="label">Renda Famíliar</label>
+              <select>
+                <option>o a 500</option>
+                <option>500 a 1000</option>
+                <option>1000 a 2000</option>
+                <option>Mais de 3000</option>
+              </select>  
+            
+          </fieldset>  
+            
+            
+          <label for="rg" class="label">RG</label>
+          <input type="text" id="rg" class="input-padrao" required placeholder="xxx.xxx.xxx-xx">
+          
+          
+          <label for="cpf" class="label">CPF</label>
+          <input type="text" id="cpf" class="input-padrao" required placeholder="xxx.xxx.xxx-xx">
 
 
 
-    <div class="container-fluid procurar">
-        <form class="d-flex">
-            <input class="form-control me-2 procurar-aluno" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success procurar-aluno" type="submit"><i class="bi bi-search"></i></button>
+          <label for="tel" class="label">Telefone</label>
+          <input type="tel" id="tel" class="input-padrao" required placeholder="(xx) xxxx-xx">
+
+          <label for="email" class="label">E-mail</label>
+          <input type="email" id="email" class="input-padrao" required placeholder="Usuario@conta.com">
+     
+
+          <label><input type="checkbox" class="checkbox" checked>Gostaria de receber novidades por e-mail?</label>
+
+           
+
+
+          <input type="submit"  value="Enviar formulario "class="enviar"
+       
+          
+<a href="C:\Users\user\Desktop\Projeto formulario plataforma\outro.html"> 
+            <button type="submit" class="hvr-forward" id="button">Proxima pagina</button>
+          </a>
+
         </form>
-    </div>
 
 
 
-    <div class="navbar navbar-expand-lg navbar-dark bg-dark barra-alunos  ">
-        <div class=" container-fluid  ">
-
-            <div class="collapse navbar-collapse " id="navbarSupportedContent ">
-                <ul class=" navbar-nav me-auto mb-2 mb-lg-0  ">
-
-                    <li class="nav-item dropdown barra-alunos-estilo ">
-                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Nome
-                        </a>
-                        <ul class="dropdown-menu  " aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item  " href="#">Ordem alfabética</a></li>
-                            <li><a class="dropdown-item" href="#">Ordem de chegada</a></li>
-
-                        </ul>
-                    </li>
-
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle barra-alunos-estilo" href="#" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Filial
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Rocinha</a></li>
-                            <li><a class="dropdown-item" href="#">jacare</a></li>
-                            <li><a class="dropdown-item" href="#">Manguinhos</a></li>
-                            <li><a class="dropdown-item" href="#">Buzios</a></li>
-
-
-
-                        </ul>
-                    </li>
-
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle barra-alunos-estilo" href="#" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Curso
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">UX/UI</a></li>
-                            <li><a class="dropdown-item" href="#">Front-end</a></li>
-                            <li><a class="dropdown-item" href="#">Back-end</a></li>
-
-                        </ul>
-                    </li>
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
-
+    </main>
 
     <script src="./src/js/dashboard.js"></script>
     </body>
