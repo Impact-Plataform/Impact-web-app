@@ -51,7 +51,7 @@ entrar.addEventListener("click", async e => {
     window.sessionStorage.setItem('token', retJson.token)
     window.sessionStorage.setItem('user', retJson.user.name)
     window.sessionStorage.setItem('userType', retJson.user.type)
-    window.location.href = './dashboard.html'
+    window.location.href = './src/pages/dashboard.html'
   } else { 
     output.innerHTML = retJson.message
     password.parentNode.insertBefore(output, entrar);
