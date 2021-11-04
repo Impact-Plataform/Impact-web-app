@@ -1,130 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="./src/styles/main.css"> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="formulario.css">
-    <link rel="stylesheet" href="/src/sytles/base/global.css">
+    <link rel="stylesheet" href="../sytles/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela-1</title>
 </head>
 
-<bodyd>
-
-    <header class="header">
-    
+<body>
+    <header class="header" >
+            <img src="../assets/logo.png" class="logo">
+            <span class="admin">ADMIN</span>
+            <a href="#" class="logout"><img src="../assets/logout.png" alt="logout"></a>
+     
     </header>
 
-
-
-    <nav>
-        <!-- LATERAL PRETA -->
+    <nav class="menu">
+        <ul class="menu-list">
+            <li><a href="#" class="link">ALUNOS</a></li>
+            <li><a href="#" class="link">JEDIS</a></li>
+        </ul>
+        <ul class="menu-list">
+            <li><a href="#" class="link">Adicionar Alunos</a></li>
+            <li><a href="#" class="link">Adicionar Usuários</a></li>
+        </ul>
     </nav>
+    
 
-    <main>
-        <form class="form">
-            
-           <label for="nomesobrenome" class="label">Nome e Sobrenome:</label>
-           <input type="text" id="nomesobrenome" class="input-padrao" required placeholder="Nome Sobrenome">
+    <main class="principal">
 
 
-          <label for="enereco" class="label">Endereço:</label>
-          <input type="text" id="endereco" class="input-padrao" required placeholder="Rua, AV Número...">
-
-          <label for="cidade" class="label">Cidade de nascimento</label>
-          <input type="text" id="cidade" class="input-padrao" required placeholder="Ex: Rio de janeiro...">
-
-           
-           
-          <label for="data" class="label">Data de nascimento</label>
-          <input type="date" id="data" required class="input-padrao">
+      <form class="form">
         
 
+        <!--DADOS PESSOAIS-->
 
-        <fieldset >
-           <label class="label">Escolaridade</label>
-             <select>
-              <option>Fundamental Incompleto</option>
-              <option>Fundamental Completo</option>
-              <option>Ensino Médio Incompleto</option>
-              <option>Ensino Médio Completo</option>
-              <option>Ensino Superior Incompleto</option>
-              <option>Ensino Superior Completo</option>
-             </select>
+        <label for="Students.name" class="label">Nome completo:</label>
+        <input type="text" id="Students.name" class="input-padrao">
+
+        <label for="Students.birthdate" class="label">Nascimento:</label>
+        <input type="date" id="Students.birthdate" required class="input-padrao">
+
+        <!--quebra de linha-->
+
+        <label for="StudentDocuments.rg" class="label">RG:</label>
+        <input type="text" id="StudentDocuments.rg" class="input-padrao" required placeholder="xxx.xxx.xxx-xx">
+       
+        <label for="StudentDocuments.cpf" class="label">CPF:</label>
+        <input type="text" id="StudentDocuments.cpf" class="input-padrao" required placeholder="xxx.xxx.xxx-xx">
+
+        <label for="Students.city_of_birth" class="label">Naturalidade:</label>
+        <input type="text" id="Students.city_of_birth" class="input-padrao">
+
+        <!--quebra de linha-->
+
+        <fieldset>
+          <label class="label" id="Students.schooling">Escolaridade:</label>
+          <select>
+           <option>Superior completo</option>
+           <option>Superior cursando</option>
+           <option>Ensino Médio completo</option>
+           <option>Ensino Médio cursando</option>
+           <option>Ensino Fundamental II</option>
+          </select>
+        </fieldset>
+       
+        <label for="StudentContacts.email" class="label">E-mail:</label>
+        <input type="email" id="StudentContacts.email" class="input-padrao" required placeholder="Usuario@conta.com">
+       
+        <!--quebra de linha-->
+
+        <label for="Students.phone" class="label">Telefone para contato:</label>
+        <input type="tel" id="Students.phone" class="input-padrao" required placeholder="(xx) xxxx-xx">
+       
+
+        
+        <!--DADOS DO RESPONSÁVEL-->
+
+        <label for="StudentParent.name" class="label">Nome completo:</label>
+        <input type="text" id="StudentParent.name" class="input-padrao">
+
+        <label for="StudentParent.cpf" class="label">CPF:</label>
+        <input type="text" id="StudentParent.cpf" class="input-padrao" required placeholder="xxx.xxx.xxx-xx">
+
+        <fieldset>
+          <label class="label" id="StudentParent.relationshinp">Parentesco:</label>
+          <select>
+           <option>Pai</option>
+           <option>Mãe</option>
+           <option>Outro</option>
+          </select>
+        </fieldset>
+
+        <label for="StudentParent.phone" class="label">Telefone para contato:</label>
+        <input type="tel" id="StudentParent.phone" class="input-padrao" required placeholder="(xx) xxxx-xx">
 
 
-            
-            
-            <label class="label">Mora com quantas pessoas?</label> 
-              <select>
-               <option>Sozinho</option>
-               <option>1</option>
-               <option>2</option>
-               <option>3</option>              
-               <option>4</option>
-               <option>5+</option>
-              </select>
 
+        <!--DADOS CADASTRAIS-->
 
-             <label class="label">Situação de emprego</label>
-              <select>
-                <option>Empregado</option>
-                <option>Desempregado</option>
-              </select> 
+        <label for="StudentAddress.cep" class="label">CEP:</label>
+        <input type="text" id="StudentAddress.cep" class="input-padrao" required placeholder="xxxxx-xxx">
 
-              <label class="label">Renda Famíliar</label>
-              <select>
-                <option>o a 500</option>
-                <option>500 a 1000</option>
-                <option>1000 a 2000</option>
-                <option>Mais de 3000</option>
-              </select>  
-            
-          </fieldset>  
-            
-            
-          <label for="rg" class="label">RG</label>
-          <input type="text" id="rg" class="input-padrao" required placeholder="xxx.xxx.xxx-xx">
-          
-          
-          <label for="cpf" class="label">CPF</label>
-          <input type="text" id="cpf" class="input-padrao" required placeholder="xxx.xxx.xxx-xx">
+        <label for="StudentAddress.street" class="label">Endereço:</label>
+        <input type="text" id="StudentAddress.street" class="input-padrao">
 
+        <label for="StudentAddress.number" class="label">Nº:</label>
+        <input type="text" id="StudentAddress.number" class="input-padrao">
 
+        <!--quebra de linha-->
 
-          <label for="tel" class="label">Telefone</label>
-          <input type="tel" id="tel" class="input-padrao" required placeholder="(xx) xxxx-xx">
+        <label for="StudentAddress.complement" class="label">Complemento:</label>
+        <input type="text" id="StudentAddress.complement" class="input-padrao">
 
-          <label for="email" class="label">E-mail</label>
-          <input type="email" id="email" class="input-padrao" required placeholder="Usuario@conta.com">
+        <fieldset>
+          <label class="label" id="Students.marital_status">Estado civil:</label>
+          <select>
+           <option>Solteiro(a)</option>
+           <option>Casado(a)</option>
+           <option>Viúvo(a)</option>
+          </select>
+        </fieldset>
+
+        <label for="Students.income" class="label">Renda individual mensal:</label>
+        <input type="text" id="Students.income" class="input-padrao">
+        
      
 
-          <label><input type="checkbox" class="checkbox" checked>Gostaria de receber novidades por e-mail?</label>
+        <!--DADOS SOCIAIS-->
 
-           
+        <label for="Students.family_income" class="label">Renda familiar:</label>
+        <input type="text" id="Students.family_income" class="input-padrao">
 
+        <fieldset>
+          <label class="label" id="Students.family_members_with_disability">Pessoa com deficiência na família:</label>
+          <select>
+           <option>Não</option>
+           <option>Sim</option>
+          </select>
+        </fieldset>
 
-          <input type="submit"  value="Enviar formulario "class="enviar"
+        <fieldset>
+          <label class="label" id="Students.government_aid">Recebe auxílio governamental:</label>
+          <select>
+           <option>Não</option>
+           <option>Sim</option>
+          </select>
+        </fieldset>
+
+        <!--quebra de linha-->
+
+        <label for="Students.family_members" class="label">Nº de pessoas na mesma casa:</label>
+        <input type="text" id="Students.family_members" class="input-padrao">
+     
+         
+         
+
+       <input type="submit"  value="Enviar formulario "class="enviar"
+    
        
-          
-<a href="C:\Users\user\Desktop\Projeto formulario plataforma\outro.html"> 
-            <button type="submit" class="hvr-forward" id="button">Proxima pagina</button>
+         <a href="C:\Users\user\Desktop\Projeto formulario plataforma\outro.html"> 
+         <button type="submit" class="hvr-forward" id="button">Proxima pagina</button>
           </a>
 
-        </form>
-
+     </form>
 
 
     </main>
-
     <script src="./src/js/dashboard.js"></script>
     </body>
 
