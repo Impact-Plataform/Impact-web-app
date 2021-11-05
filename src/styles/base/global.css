@@ -4,7 +4,7 @@
 body{
   display: grid;
   grid-template-columns: 320px 1fr;
-  grid-template-rows: 10vh 1fr;
+  grid-template-rows: 12.5vh 1fr;
   grid-template-areas:
     "header header"
     "nav main";
@@ -13,6 +13,7 @@ body{
 * {
   box-sizing: border-box;
 }
+
 .header {
   font-weight: bold;
   font-size: 30px;
@@ -22,7 +23,7 @@ body{
   align-items: center;
   justify-content: space-between;
   background-color: var(--orange,orange);
-  padding: 2rem;
+  padding: 1rem 2rem 0;
 }
 .logo {
   object-fit: contain;
@@ -43,63 +44,36 @@ body{
   
 }
 .menu-list {
+  margin: 2rem;
   display: grid;
   grid-template-columns: 100%;
   row-gap: 1rem;
   justify-content: center;
 }
-
 .link {
-  
-  position:relative;
-  display: block;
+  padding: .5rem;
   background-color: var(--orange,gray);
-  border-radius: 5px;
-  height: 40px;
-  font-size: 25px;
+  border-radius: 10px;
+  width: 100%;
+  transition: .25s ease-in;
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1.5rem;
   text-decoration: none;
   text-align: center;
-  padding-block: .5rem;
   color: white; 
 }
 
 .link:hover {
-  background-color: white;
-  color: black;
-  transform: scale(1.1) ;
+  transform: scale(1.03);
 }
-
 .principal {
   grid-area: main;
 }
 
-
-.icon1{
-  position: absolute;
-  top:4px;
-  left:70px;
-  width: 30px;
-}
-
-.icon2{
-  position: absolute;
-  top:4px;
-  left:90px;
-  width: 30px;
-}
-
-.icon3{
-  position: absolute;
-  top:4px;
-  left:30px;
-  width: 30px;
-}
-
-.icon4{
-  position: absolute;
-  top:4px;
-  left:24px;
-  width: 30px;
+.icon{
+  object-fit: contain;
+  max-width: 30px;
 }
 
 
