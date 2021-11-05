@@ -2,38 +2,38 @@ let email = document.querySelector("#email");
 let entrar = document.querySelector("#entrar");
 let password = document.querySelector("#password");
 let output = document.createElement("span");
-output.classList.add("output");
+output.classList.add("output")
 function check(e) {
   if (e.target.name === "email") {
     if (email.value.indexOf("@") == -1 && email.value.indexOf('.') == -1) {
-      output.innerHTML = "Preencha os campos corretamentes";
-      email.parentNode.insertBefore(output, entrar);
-      email.classList.add("error");
-      return false;
+      output.innerHTML = "Preencha os campos corretamentes"
+      email.parentNode.insertBefore(output, entrar)
+      email.classList.add("error")
+      return false
     } else {
-      email.classList.remove("error");
-      output.remove();
+      email.classList.remove("error")
+      output.remove()
     }
-    return true;
+    return true
   }
   if (password.value == "") {
-    output.innerHTML = "Preencha os campos corretamente";
-    password.parentNode.insertBefore(output, entrar);
-    password.classList.add("error");
-    return false;
+    output.innerHTML = "Preencha os campos corretamente"
+    password.parentNode.insertBefore(output, entrar)
+    password.classList.add("error")
+    return false
   } else {
-    password.classList.remove("error");
-    output.remove();
+    password.classList.remove("error")
+    output.remove()
   }
-  return true;
+  return true
 }
 
-document.querySelectorAll('input').forEach(input => input.addEventListener("blur", e => check(e)));
+document.querySelectorAll('input').forEach(input => input.addEventListener("blur", e => check(e)))
 
 entrar.addEventListener("click", async e => {
-  e.preventDefault();
+  e.preventDefault()
   if(!check(e)){
-    return;
+    return
   }
 
   const credenciais = {
@@ -58,7 +58,7 @@ entrar.addEventListener("click", async e => {
     window.location.href = './src/pages/dashboard.html'
   } else { 
     output.innerHTML = retJson.message
-    password.parentNode.insertBefore(output, entrar);
+    password.parentNode.insertBefore(output, entrar)
   }
 
-});
+})

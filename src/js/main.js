@@ -2,9 +2,14 @@ if (!window.sessionStorage.getItem('token')) {
   window.location.href = "/Impact-web-app";
 }
 window.onload = () => {
-  const admin = document.querySelector('#admin').innerHTML = window.sessionStorage.getItem('user')
+  document.querySelector('#admin').innerHTML = window.sessionStorage.getItem('user')
+  if (sessionStorage.getItem('admin') !== 'true') {
+    document.querySelector('.add').style.display = 'none'
+  }
   document.querySelector('#logout').addEventListener('click', () => {
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('user');
+    sessionStorage.removeItem('admin');
     window.location.href = '/Impact-web-app';
   })
 }
