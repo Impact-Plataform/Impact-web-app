@@ -1,5 +1,5 @@
 if(sessionStorage.getItem('token')){
-  window.location.href = './src/pages/dashboard.html'
+  window.location.href = '/src/pages/dashboard.html'
 }
 window.onload = () => {
   let email = document.querySelector("#email");
