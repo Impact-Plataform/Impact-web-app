@@ -1,0 +1,18 @@
+.header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: orange;
+  padding: 8vmin;
+  border: solid;
+  border-color: black;
+}
+
+
+
+nav {
+  background-color: black;
+  width: 200px;
+  height: 87.1%;
+  position: absolute;
+}

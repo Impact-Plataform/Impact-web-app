@@ -1,0 +1,105 @@
+:root{
+  --orange:#eb7b3c;
+}
+body{
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: 10vh 1fr;
+  grid-template-areas:
+    "header header"
+    "nav main";
+  min-height: 100vh;
+}
+* {
+  box-sizing: border-box;
+}
+.header {
+  font-weight: bold;
+  font-size: 30px;
+  grid-area: header;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--orange,orange);
+  padding: 2rem;
+}
+.logo {
+  object-fit: contain;
+  width: 10rem;
+}
+.logout > img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+.menu{
+  grid-area: nav;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem .5rem 3rem;
+  
+}
+.menu-list {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 1rem;
+  justify-content: center;
+}
+
+.link {
+  
+  position:relative;
+  display: block;
+  background-color: var(--orange,gray);
+  border-radius: 5px;
+  height: 40px;
+  font-size: 25px;
+  text-decoration: none;
+  text-align: center;
+  padding-block: .5rem;
+  color: white; 
+}
+
+.link:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.1) ;
+}
+
+.principal {
+  grid-area: main;
+}
+
+
+.icon1{
+  position: absolute;
+  top:4px;
+  left:70px;
+  width: 30px;
+}
+
+.icon2{
+  position: absolute;
+  top:4px;
+  left:90px;
+  width: 30px;
+}
+
+.icon3{
+  position: absolute;
+  top:4px;
+  left:30px;
+  width: 30px;
+}
+
+.icon4{
+  position: absolute;
+  top:4px;
+  left:24px;
+  width: 30px;
+}
+
+
