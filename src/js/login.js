@@ -3,7 +3,6 @@ let entrar = document.querySelector("#entrar");
 let password = document.querySelector("#password");
 let output = document.createElement("span");
 output.classList.add("output");
-
 function check(e) {
   if (e.target.name === "email") {
     if (email.value.indexOf("@") == -1 && email.value.indexOf('.') == -1) {
