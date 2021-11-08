@@ -1,4 +1,4 @@
-/*
+
 if (!window.sessionStorage.getItem('token')) {
   window.location.href = "/Impact-web-app";
 }
@@ -14,4 +14,3 @@ window.onload = () => {
     window.location.href = '/Impact-web-app';
   })
 }
-*/

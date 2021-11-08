@@ -1,28 +1,30 @@
+(async () => {
 
-/*
-(async () =>{
-
-    let ret = await fetch('https://impact-app.herokuapp.com/student/getAllStudents', {
+  let ret = await fetch('https://impact-app.herokuapp.com/student/getAllStudents', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
       'authorization': 'Bearer' + ' ' + sessionStorage.getItem('token')
     }
   })
-  console.log(ret)
+  const retJson = await ret.json()
+  const students = retJson.students
+  window.sessionStorage.removeItem('student')
+  window.sessionStorage.removeItem('student_id')
+  students.forEach(student => {
+    const cell = document.createElement('tr')
+    cell.innerHTML = `
+    <td><a id="${students.student_id}" href="./student.html">${student.name}</a></td>
+    <td>${student.birthdate}</td>
+    <td>${student.contacts.phone}</td>`
+    document.querySelector('tbody').appendChild(cell)
+    document.querySelector(`#${students.student_id}`).addEventListener('click', () => {
+
+      window.sessionStorage.setItem('student', student)
+      window.sessionStorage.setItem('student_id', student.student_id)
+    })
+  })
 })()
 
-*/
 
-function fazerRequisicao(){
 
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "https://impact-app.herokuapp.com/student/getAllStudents", false);
-  xhttp.setRequestHeader("authorization", 'Bearer' + ' ' + sessionStorage.getItem('token'));
-  xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
-
-  console.log(xhttp.responseText)
-
-}
-
-fazerRequisicao()
