@@ -10,10 +10,12 @@
 
   const retJson = await ret.json()
   const students = retJson.students
-
-  window.sessionStorage.removeItem('student')
-  window.sessionStorage.removeItem('student_id')
-
+  document.querySelector('#jedi').addEventListener('click', ()=>{
+    students.map(student=>{
+      return student.jedi==true
+    })
+    console.log(students);
+  })
   students.forEach(student => {
     const cell = document.createElement('tr')
     cell.innerHTML = `
@@ -23,14 +25,9 @@
     <td>${student.contacts.phone}</td>`
 
     document.querySelector('tbody').appendChild(cell)
-    document.querySelector(`#${students.student_id}`).addEventListener('click', () => {
-
-      window.sessionStorage.setItem('student', student)
-      window.sessionStorage.setItem('student_id', student.student_id)
-
-    })
   })
 })()
+
 
 
 
