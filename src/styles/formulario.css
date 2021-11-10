@@ -1,5 +1,7 @@
 .form {
-    margin: 50px 40px;
+    display: grid;
+    grid-row-gap: 10px;
+    padding: 5em;
 }
 
 .quebra {
@@ -7,59 +9,18 @@
 }
 
 .input-padrao {
-    margin: 0 0 20px;
     padding: 5px 25px;
     width: 30%;
 }
 
 .letreiro {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 250px;
+    
     font-size: 48px;
 }
 
 .letreiro2 {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 200px;
+    
     font-size: 48px;
-}
-
-.l1 {
-    margin-right: 50px;
-}
-
-.l2 {
-    margin-right: 175px;
-}
-
-.l3-ajuste {
-    display: inline-block;
-}
-
-.l3 {
-    margin-right: 90px;
-}
-
-.l4 {
-    margin-right: 43px;
-}
-
-.l5 {
-    margin-right: 53px;
-}
-
-.l7 {
-    margin-right: 17px;
-}
-
-.l8 {
-    margin-right: 105px;
-}
-
-.l9 {
-    margin-right: 74px;
 }
 
 .ajuste-linha {
@@ -67,18 +28,8 @@
 }
 
 .letreiro3 {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 200px;
+    
     font-size: 48px;
-}
-
-.l10 {
-    margin-right: 74px;
-}
-
-.l11 {
-    margin-right: 90px;
 }
 
 .enviar {
@@ -94,10 +45,25 @@
     transition: 1s all;
     cursor: pointer;
     display: block;
-    margin: 40px 0;
 }
 
 .enviar:hover {
     background: darkorange;
     transform: scale(1.1);
+}
+
+form label{
+    display: block;
+}
+
+.dados-pessoais{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 10px;
+}
+.dados-pessoais input{
+    width: 100%;
+}
+.input-3{
+    grid-column: 2;
 }
