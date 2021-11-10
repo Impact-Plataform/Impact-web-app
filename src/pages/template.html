@@ -9,30 +9,31 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../assets/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
-    <title>Impact App - </title>
+    <title>Impact App</title>
     <script type="text/javascript" src="../js/main.js"></script>
     </script>
 </head>
 
 <body>
     <header class="header">
-        <a href="/Impact-web-app/src/pages/dashboard.html"><img src="../assets/logo.png" class="logo"></a>
+        
         <span id="admin"></span>
         <a href="#" class="logout" id="logout"><img src="../assets/logout.png" alt="logout"></a>
     </header>
 
     <nav class="menu">
-        <ul class="menu-list">
-            <li><a href="./dashboard.html" class="link"><img src="../assets/dashboard.png" alt="imagem-alunos"
-                        class="icon">Dashboard<a></li>
-            <li><a href="#" class="link"><img src="../assets/jedis.png" alt="imagem-jedis" class="icon">Jedis</a></li>
+        <a href="/Impact-web-app/src/pages/dashboard.html"><img src="../assets/logo.png" class="logo"></a>
+        <div class="wrapper">
+        <ul class="menu-list dashboard-itens">
+            <li><a href="./dashboard.html" class="link upper"><img src="../assets/dashboard.png" alt="imagem-alunos" class="icon">Dashboard<a></li>
+            <li><a href="#" class="link upper"><img src="../assets/jedis.png" alt="imagem-jedis" class="icon">Jedis</a></li>
         </ul>
 
-        <ul class="menu-list add">
-            <li><a href="./formulario.html" class="link"><img src="../assets/mais.png" alt="Adicionar"
-                        class="icon">Alunos</a></li>
+        <ul id="add" class="menu-list">
+            <li><a href="./formulario.html" class="link"><img src="../assets/mais.png" alt="Adicionar" class="icon">Alunos</a></li>
             <li><a href="#" class="link"><img src="../assets/mais.png" alt="Adcionar" class="icon">Usuários</a></li>
         </ul>
+    </div>
     </nav>
     <main class="principal">
 
