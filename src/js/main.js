@@ -5,7 +5,7 @@ if (!window.sessionStorage.getItem('token')) {
 window.onload = () => {
   document.querySelector('#admin').innerHTML = window.sessionStorage.getItem('user')
   if (sessionStorage.getItem('admin') !== 'true') {
-    document.querySelector('.add').remove()
+    document.querySelector('#add').remove()
   }
   document.querySelector('#logout').addEventListener('click', () => {
     sessionStorage.removeItem('token');

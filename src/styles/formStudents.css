@@ -1,0 +1,50 @@
+.form {
+    display: grid;
+    grid-row-gap: 10px;
+    padding: 2em;
+}
+
+.quebra {
+    display: block;
+}
+
+.input-padrao {
+    padding: 5px 25px;
+    width: 30%;
+}
+
+.ajuste-linha {
+    display: inline-block;
+}
+
+
+.enviar {
+    min-width: 180px;
+    width: 20%;
+    padding: 15px 0;
+    background: #eb7b3c;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 15px;
+    transition: 1s all;
+    cursor: pointer;
+    display: block;
+}
+
+form label{
+    display: block;
+}
+
+.dados-pessoais{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 10px;
+}
+.dados-pessoais input{
+    width: 100%;
+}
+.input-3{
+    grid-column: 2;
+}

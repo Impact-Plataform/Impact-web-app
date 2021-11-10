@@ -9,24 +9,47 @@
   })
 
   const retJson = await ret.json()
-  const students = retJson.students
-  document.querySelector('#jedi').addEventListener('click', ()=>{
-    students.map(student=>{
-      return student.jedi==true
-    })
-    console.log(students);
+  let students = retJson.students
+
+  students.forEach(student => {insertStudent(student)})
+
+  
+  
+  document.querySelector('#jedi').addEventListener('click', e=>{
+    e.preventDefault()
+    clearTable()
+    document.querySelector('.page-title').innerHTML = 'Jedi'
+    let jedis = students.filter(student=>student.jedi==true)
+    jedis.forEach(jedi => insertStudent(jedi))
   })
-  students.forEach(student => {
-    const cell = document.createElement('tr')
+  if(document.URL.split('?')[1] === 'jedi'){
+    clearTable()
+    document.querySelector('.page-title').innerHTML = 'Jedi'
+    let jedis = students.filter(student=>student.jedi==true)
+    jedis.forEach(jedi => insertStudent(jedi))
+  } 
+  document.querySelector('#alunos').addEventListener('click', e=>{
+    window.history.pushState({}, document.title, window.location.pathname);
+    e.preventDefault()
+    clearTable()
+    document.querySelector('.page-title').innerHTML = 'Alunos'
+    students.forEach(student => insertStudent(student))
+  })
+})()
+
+function insertStudent(student) {
+  const cell = document.createElement('tr')
     cell.innerHTML = `
-    <td><a id="${students.student_id}" href="FormPreenchido.html?${student.student_id}"><img src="../assets/edit.png" alt="Editar Cadastro"></a></td>
-    <td><a id="${students.student_id}" href="FormPreenchido.html?${student.student_id}">${student.name}</a></td>
+    <td><a id="${student.student_id}" href="consulta-cadastro.html?${student.student_id}"><img src="../assets/edit.png" alt="Visualizar Cadastro"></a></td>
+    <td><a id="${student.student_id}" href="consulta-cadastro.html?${student.student_id}">${student.name}</a></td>
     <td>${student.birthdate}</td>
     <td>${student.contacts.phone}</td>`
 
     document.querySelector('tbody').appendChild(cell)
-  })
-})()
+}
+function clearTable() {
+  document.querySelector('tbody').innerHTML = ''
+} 
 
 
 
