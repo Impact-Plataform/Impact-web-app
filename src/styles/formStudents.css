@@ -1,7 +1,7 @@
 .form {
     display: grid;
     grid-row-gap: 10px;
-    padding: 5em;
+    padding: 2em;
 }
 
 .quebra {
@@ -13,24 +13,10 @@
     width: 30%;
 }
 
-.letreiro {
-    
-    font-size: 48px;
-}
-
-.letreiro2 {
-    
-    font-size: 48px;
-}
-
 .ajuste-linha {
     display: inline-block;
 }
 
-.letreiro3 {
-    
-    font-size: 48px;
-}
 
 .enviar {
     min-width: 180px;
@@ -45,11 +31,6 @@
     transition: 1s all;
     cursor: pointer;
     display: block;
-}
-
-.enviar:hover {
-    background: darkorange;
-    transform: scale(1.1);
 }
 
 form label{

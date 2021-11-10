@@ -1,5 +1,7 @@
 :root{
   --orange:#eb7b3c;
+  --font-size-default:1rem;
+  --font-size-bigger:1.15rem;
 }
 body{
   display: grid;
@@ -9,30 +11,42 @@ body{
     "nav header"
     "nav main";
   min-height: 100vh;
+  font-size: var(--font-size-default, 1rem);
+  font-family: 'Comfortaa', cursive!important;
 }
 * {
   box-sizing: border-box;
 }
-
+.page-title {
+  background: var(--orange,orange);
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#admin {
+  color: white;
+}
 .header {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 1.5em;
   grid-area: header;
+  text-align: center;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--orange,orange);
-  padding: .5rem 2rem 0;
+  background-color: black;
+  padding-bottom: .5rem;
 }
 .logo {
   object-fit: contain;
   width: 10rem;
 }
-.logout > img {
+.logout  img {
   width: 2rem;
   height: 2rem;
   object-fit: contain;
+  margin: .5rem;
+  margin-left: 95%;
 }
 .menu{
   grid-area: nav;
@@ -41,6 +55,7 @@ body{
   flex-direction: column; 
   row-gap: 2rem;
   padding: 1rem 0;  
+  font-size: var(--font-size-bigger,1.15rem);
 }
 .menu > a {
   display: grid;
@@ -53,6 +68,7 @@ body{
   height: 100%;
 }
 .menu-list {
+  padding: 0;
   display: grid;
   row-gap: 1rem;
 }
@@ -61,20 +77,27 @@ body{
 }
 .link {
   padding: .5rem;
-  background-color: var(--orange,gray);
+  background-color: var(--orange,orange);
   width: 100%;
   transition: .25s ease-in;
   display: flex;
   gap: 2.5rem;
-  font-size: 1.5rem;
   text-decoration: none;
   text-align: center;
   color: black;
+  transition: .25s ease-in;
 }
-
+.dashboard-itens a:hover {
+  color: var(--orange,orange)!important;
+}
+#add a:hover{ 
+  color: white!important;
+}
 
 .principal {
   grid-area: main;
+  font-size: var(--font-size-default);
+  padding: 1% 1% 1% 1%;
 }
 
 .icon{

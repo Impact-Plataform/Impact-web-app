@@ -1,15 +1,10 @@
-th{
+thead{
   text-align: center!important;
-  color: ble;
 } 
 td {
-  border-bottom: 1px solid black!important;
   text-align: center;
 }
-td > a:hover, a:visited, a:link, a:active {
+table a:hover, a:visited, a:link, a:active {
   text-decoration: none;
   color: #000;
-}
-.principal{
-  font-size: 1.5rem ;
 }

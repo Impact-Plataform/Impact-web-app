@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/formStudents.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="../styles/dashboard.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+  <title>Impact App - Dashboard</title>
+  <script type="text/javascript" src="../js/main.js"></script>
+
+</head>
+
+<body>
+  <header class="header">
+
+    <span id="admin"></span>
+  </header>
+
+  <nav class="menu">
+    <a href="/Impact-web-app/src/pages/dashboard.html"><img src="../assets/logo.png" class="logo"></a>
+    <div class="wrapper">
+      <ul class="menu-list dashboard-itens">
+        <li><a href="./dashboard.html" id="alunos" class="link upper"><img src="../assets/dashboard.png"
+              alt="imagem-alunos" class="icon">Alunos<a></li>
+        <li><a href="./dashboard.html?jedi" id="jedi" class="link upper"><img src="../assets/jedis.png" alt="imagem-jedis"
+              class="icon">Jedis</a></li>
+      </ul>
+
+      <ul id="add" class="menu-list">
+        <li><a href="./cadastrar-estudantes.html" class="link"><img src="../assets/mais.png" alt="Adicionar"
+              class="icon">Alunos</a></li>
+        <li><a href="./adicionar-usuario.html" class="link"><img src="../assets/mais.png" alt="Adcionar"
+              class="icon">Usuários</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main class="principal">
+   <div class="logout">
+            <a href="#" id="logout"><img src="../assets/logout.png" alt="logout"></a>
+        </div>
+    <header class="page-title">Consultar Cadastro</header>
+
+    <form class="form">
+      <h1 class="letreiro">Dados Aluno</h1>
+
+      <!--DADOS PESSOAIS-->
+
+      <label for="name" class="label">Nome completo:</label>
+      <input type="text" id="name" class="input-padrao l1" disabled>
+
+      <label for="birthdate" class="label">Nascimento:</label>
+      <input type="date" id="birthdate" required class="input-padrao " disabled>
+
+      <!--quebra de linha-->
+      <br>
+      <label for="rg" class="label">RG:</label>
+      <input type="text" id="rg" class="input-padrao l2" required placeholder="xxx.xxx.xxx-xx" disabled>
+
+      <label for="cpf" class="label ">CPF:</label>
+      <input type="text" id="cpf" class="input-padrao " required placeholder="xxx.xxx.xxx-xx" disabled>
+      <br>
+      <label for="city_of_birth" class="label">Naturalidade:</label>
+      <input type="text" id="city_of_birth" class="input-padrao l3" disabled>
+
+
+      <!--quebra de linha-->
+
+      <fieldset class="l3-ajuste">
+        <label class="label" id="schooling ">Escolaridade:</label>
+        <select disabled>
+          <option> </option>
+          <option>Superior completo</option>
+          <option>Superior cursando</option>
+          <option>Ensino Médio Completo</option>
+          <option>Ensino Médio cursando</option>
+          <option>Ensino Fundamental II</option>
+        </select>
+      </fieldset>
+      <br>
+      <label for="email" class="label">E-mail:</label>
+      <input type="email" id="email" class="input-padrao l4" required placeholder="Usuario@conta.com" disabled>
+
+      <!--quebra de linha-->
+
+      <label for="phone" class="label">Telefone para contato:</label>
+      <input type="tel" id="phone" class="input-padrao" required placeholder="(xx) xxxx-xx" disabled>
+      <br>
+
+
+      <!--DADOS DO RESPONSÁVEL-->
+      <h1 class="letreiro2">Dados Responsável</h1>
+      <label for="name" class="label">Nome completo:</label>
+      <input type="text" id="nameRes" class="input-padrao l5" disabled>
+
+      <label for="cpf" class="label">CPF:</label>
+      <input type="text" id="cpfRes" class="input-padrao" required placeholder="xxx.xxx.xxx-xx" disabled>
+
+      <fieldset>
+        <label class="label" id="relationshinp">Parentesco:</label>
+        <select disabled>
+          <option> </option>
+          <option>Pai</option>
+          <option>Mãe</option>
+          <option>Outro</option>
+        </select>
+      </fieldset>
+
+      <br>
+
+      <label for="phone" class="label ">Telefone para contato:</label>
+      <input type="tel" id="phoneRes" class="input-padrao l7" required placeholder="(xx) xxxx-xx" disabled>
+
+
+
+      <!--DADOS CADASTRAIS-->
+
+      <label for="cep" class="label">CEP:</label>
+      <input type="text" id="cep" class="input-padrao" required placeholder="xxxxx-xxx" disabled>
+      <br>
+      <label for="street" class="label">Endereço:</label>
+      <input type="text" id="street" class="input-padrao l8" disabled>
+
+      <label for="number" class="label">Nº:</label>
+      <input type="text" id="number" class="input-padrao" disabled>
+
+      <!--quebra de linha-->
+      <br>
+      <label for="complement" class="label">Complemento:</label>
+      <input type="text" id="complement" class="input-padrao l" disabled>
+
+      <fieldset class="ajuste-linha">
+        <label class="label" id="marital_status">Estado civil:</label>
+        <select disabled>
+          <option> </option>
+          <option>Solteiro(a)</option>
+          <option>Casado(a)</option>
+          <option>Viúvo(a)</option>
+        </select>
+      </fieldset>
+      <br>
+
+      <!--DADOS SOCIAIS-->
+      <h1 class="letreiro3">Dados Sociais</h1>
+
+      <label for="income" class="label">Renda individual mensal:</label>
+      <input type="text" id="income" class="input-padrao l10" disabled>
+
+      <fieldset class="ajuste-linha">
+        <label class="label" id="family_members_with_disability">Pessoa com deficiência na família:</label>
+        <select disabled>
+          <option> </option>
+          <option>Não</option>
+          <option>Sim</option>
+        </select>
+      </fieldset>
+
+      <br>
+      <label for="family_income" class="label">Renda familiar:</label>
+      <input type="text" id="family_income" class="input-padrao l11" disabled>
+
+
+
+      <fieldset class="ajuste-linha">
+        <label class="label" id="government_aid">Recebe auxílio governamental:</label>
+        <select disabled>
+          <option> </option>
+          <option>Não</option>
+          <option>Sim</option>
+        </select>
+      </fieldset>
+
+      <!--quebra de linha-->
+      <br>
+      <label for="family_members" class="label">Nº de pessoas na mesma casa:</label>
+      <input type="text" id="family_members" class="input-padrao" disabled>
+
+
+      <br>
+
+      <input type="submit" value="Enviar formulario " class="enviar">
+
+    </form>
+
+
+  </main>
+  <script type="text/javascript" src="../js/consulta-cadastro.js"></script>
+</body>
+
+</html>
