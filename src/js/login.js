@@ -1,5 +1,5 @@
 if(sessionStorage.getItem('token')){
-  window.location.href = window.location.pathname + '/src/pages/dashboard.html'
+  // window.location.href = window.location.pathname + '/src/pages/dashboard.html'
   console.log(window.location.pathname + '/src/pages/dashboard.html');
 
 }
