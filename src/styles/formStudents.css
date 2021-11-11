@@ -1,7 +1,6 @@
 .form {
     display: grid;
     grid-row-gap: 10px;
-    padding: 2em;
 }
 
 .quebra {
@@ -10,41 +9,74 @@
 
 .input-padrao {
     padding: 5px 25px;
-    width: 30%;
 }
-
+.letreiro {
+    font-size: 48px;
+}
 .ajuste-linha {
     display: inline-block;
 }
-
-
 .enviar {
     min-width: 180px;
     width: 20%;
     padding: 15px 0;
-    background: #eb7b3c;
+    background: var(--orange,orange);
     color: white;
-    font-weight: bold;
-    font-size: 18px;
     border: none;
-    border-radius: 15px;
-    transition: 1s all;
-    cursor: pointer;
-    display: block;
+    border-radius: 10px;
+    margin: 3rem auto 0 ;
+    transition: .3s;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.enviar:hover {
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
 }
 
 form label{
     display: block;
 }
 
-.dados-pessoais{
+.dados{
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
 }
-.dados-pessoais input{
-    width: 100%;
+
+.dados-responsavel{
+    grid-template-columns:1fr 1fr 1fr;
 }
-.input-3{
-    grid-column: 2;
+.dados-cadastrais{
+    grid-template-columns: 1fr 1fr 1fr;
 }
+/* .dados input{
+    width: 70%;
+} */
+.tam1{
+    width: 80%;
+}
+.tam2{
+    width: 50%;
+}
+.tam3{
+    width: 30%;
+}
+.dados select{
+    text-align: center;
+    height: 2.375rem;
+}
+.input-nome-aluno{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.input-numero-pessoas{
+    max-width: 260px;
+}
+.input-nome-responsavel{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.input-telefone-responsavel{
+    grid-row-start: 2;
+}
+
+
