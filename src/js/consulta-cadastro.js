@@ -1,7 +1,4 @@
-
-let url = document.URL
-let tamanho = url.length
-let id = url[tamanho - 1];
+let id = document.URL.split('?')[1]
 
 
 var age = async function(dataNasc){
@@ -43,9 +40,8 @@ var age = async function(dataNasc){
 
     const retJson = await ret.json()
     const student = retJson.student
-
-    console.log(student)
-    
+  
+    console.log(student.parent);
     document.getElementById("name").value = student.name
 
     let data = student.birthdate.split('/').reverse()
@@ -53,16 +49,16 @@ var age = async function(dataNasc){
     document.getElementById("rg").value = student.documents.rg
     document.getElementById("cpf").value = student.documents.cpf
     document.getElementById("city_of_birth").value = student.city_of_birth
-    //document.getElementById("schooling").value = student.schooling
+    // document.getElementById("schooling").value = student.schooling
     document.getElementById("email").value = student.contacts.email
     document.getElementById("phone").value = student.contacts.phone
 
     let idade = await age(student.birthdate)
     if(idade < 18){
-        document.getElementById("nameRes").value = student.parent.name
-        document.getElementById("cpfRes").value = student.parent.cpf
+        document.getElementById("parentName").value = student.parent.name
+        document.getElementById("parentCpf").value = student.parent.cpf
         document.getElementById("relationshinp").value = student.parent.relationshinp
-        document.getElementById("phoneRes").value = student.parent.phone
+        document.getElementById("parentPhone").value = student.parent.phone
     }
 
     document.getElementById("cep").value = student.address.cep
