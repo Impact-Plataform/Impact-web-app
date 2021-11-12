@@ -88,7 +88,6 @@ function _cpf(cpf) {
   function validarCPF(el){
     if( !_cpf(el.value) ){
     alert("CPF inválido!" + el.value);
-    // apaga o valor
     el.value = "";
     }
     }
