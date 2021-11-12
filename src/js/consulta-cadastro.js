@@ -85,6 +85,14 @@ var age = async function(dataNasc){
 
 })()
 
+function validarCPF(el){
+  if( !_cpf(el.value) ){
+  alert("CPF inválido!" + el.value);
+  // apaga o valor
+  el.value = "";
+  }
+  }
+
 
 
 

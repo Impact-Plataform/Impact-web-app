@@ -26,7 +26,7 @@ async function isMinor(dataNasc) {
 document.querySelector('#birthdate').addEventListener('blur', async () => {
   const birthdate = document.querySelector('#birthdate').value.split('-').reverse().join('/')
   if (!birthdate.length) {
-  return
+    return
   }
   if (!await isMinor(birthdate)) {
     document.querySelector('#parentsForm').style.display = 'none'
@@ -39,19 +39,19 @@ document.querySelector('#birthdate').addEventListener('blur', async () => {
   }
 })
 
-document.querySelector('#cep').addEventListener("blur", async ()=>{
-  let search = cep.value.replace("-","")
+document.querySelector('#cep').addEventListener("blur", async () => {
+  let search = cep.value.replace("-", "")
   const options = {
-      method: 'GET',
-      mode: 'cors',
-      cache: 'default'
+    method: 'GET',
+    mode: 'cors',
+    cache: 'default'
   }
   try {
     const response = await fetch(`https://viacep.com.br/ws/${search}/json/`, options)
     const data = await response.json()
     document.querySelector('#street').value = data.logradouro
   } catch (error) {
-    console.log('Deu Erro: '+ error.message)
+    console.log('Deu Erro: ' + error.message)
   }
 })
 
@@ -69,17 +69,17 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
     family_members: document.querySelector('#family_members').value,
     government_aid: document.querySelector('#government_aid').checked,
     family_members_with_disability: document.querySelector('#family_members_with_disability').checked,
-    documents:{
+    documents: {
       cpf: document.querySelector('#cpf').value,
       rg: document.querySelector('#rg').value
     },
-    address:{
+    address: {
       cep: document.querySelector('#cep').value || '',
       street: document.querySelector('#street').value,
       number: document.querySelector('#number').value,
       complement: document.querySelector('#complement').value || ''
     },
-    contacts:{
+    contacts: {
       phone: document.querySelector('#phone').value,
       email: document.querySelector('#email').value
     }
@@ -96,3 +96,44 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
 })
 
 
+//validação de cpf//
+function _cpf(cpf) {
+  cpf = cpf.replace(/[^\d]+/g, '');
+  if (cpf == '') return false;
+  if (cpf.length != 11 ||
+    cpf == "00000000000" ||
+    cpf == "11111111111" ||
+    cpf == "22222222222" ||
+    cpf == "33333333333" ||
+    cpf == "44444444444" ||
+    cpf == "55555555555" ||
+    cpf == "66666666666" ||
+    cpf == "77777777777" ||
+    cpf == "88888888888" ||
+    cpf == "99999999999")
+    return false;
+  add = 0;
+  for (i = 0; i < 9; i++)
+    add += parseInt(cpf.charAt(i)) * (10 - i);
+  rev = 11 - (add % 11);
+  if (rev == 10 || rev == 11)
+    rev = 0;
+  if (rev != parseInt(cpf.charAt(9)))
+    return false;
+  add = 0;
+  for (i = 0; i < 10; i++)
+    add += parseInt(cpf.charAt(i)) * (11 - i);
+  rev = 11 - (add % 11);
+  if (rev == 10 || rev == 11)
+    rev = 0;
+  if (rev != parseInt(cpf.charAt(10)))
+    return false;
+  return true;
+}
+
+function validarCPF(el) {
+  if (!_cpf(el.value)) {
+    alert("CPF inválido!" + el.value);
+    el.value = "";
+  }
+}

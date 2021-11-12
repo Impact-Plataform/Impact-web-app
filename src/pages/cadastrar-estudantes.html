@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
   <link rel="stylesheet" href="../styles/main.css">
   <link rel="stylesheet" href="../styles/formStudents.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +16,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="../assets/icons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
   <title>Impact App - Dashboard</title>
   <script type="text/javascript" src="../js/main.js"></script>
 
@@ -68,12 +71,12 @@
 
         <p>
           <label for="rg" class="label">RG:</label>
-          <input type="text" id="rg" class="input-padrao" required placeholder="xx.xxx.xxx-x">
+          <input type="text" id="rg" class="input-padrao" required onkeypress="$(this).mask('00.000.000-0');">
         </p>
 
         <p>
           <label for="cpf" class="label ">CPF:</label>
-          <input type="text" id="cpf" class="input-padrao" required placeholder="xxx.xxx.xxx-xx">
+          <input type="text" class="input=parao" required onkeypress="$(this).mask('000.000.000-00');" onblur="validarCPF(this)" >
         </p>
 
         <p>
@@ -88,7 +91,7 @@
 
         <p>
           <label for="phone" class="label">Telefone:</label>
-          <input type="tel" id="phone" class="input-padrao" required placeholder="(xx) xxxxx-xxxx">
+          <input type="tel" id="phone" class="input-padrao" required onkeypress="$(this).mask('(00) 9 0000-0000')"">
         </p>
 
         <fieldset class="l3-ajuste">
@@ -113,12 +116,12 @@
 
         <p>
           <label for="cpf" class="label">CPF do responsável:</label>
-          <input type="text" id="parentCpf" class="input-padrao"placeholder="xxx.xxx.xxx-xx">
+          <input type="text" id="cpf" class="input-padrao" required onkeypress="$(this).mask('000.000.000-00');" onblur="validarCPF(this)"">
         </p>
 
         <p class="input-telefone-responsavel">
           <label for="phone" class="label ">Telefone do responsável:</label>
-          <input type="tel" id="parentPhone" class="input-padrao" placeholder="(xx) xxxxx-xxxx">
+          <input type="tel" id="phone" class="input-padrao" required onkeypress="$(this).mask('(00) 9 0000-0000')"">
         </p>
         <fieldset class="input-telefone-responsavel">
           <label class="label" for="relationship">Parentesco:</label>
@@ -136,7 +139,7 @@
 
         <p>
           <label for="cep" class="label">CEP:</label>
-          <input type="text" id="cep" class="input-padrao l11" placeholder="xxxxx-xxx">
+          <input type="text" id="cep" class="input-padrao l11" onkeypress="$(this).mask('00000-00')">
         </p>
 
         <p>
@@ -232,7 +235,16 @@
     
     </form>
   </main>
+  
   <script type="text/javascript" src="../js/cadastrar-estudantes.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  
 </body>
 
 </html>
