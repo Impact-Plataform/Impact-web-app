@@ -116,12 +116,12 @@
 
         <p>
           <label for="cpf" class="label">CPF do responsável:</label>
-          <input type="text" id="cpf" class="input-padrao" required onkeypress="$(this).mask('000.000.000-00');" onblur="validarCPF(this)"">
+          <input type="text" id="cpf" class="input-padrao" onkeypress="$(this).mask('000.000.000-00');" onblur="validarCPF(this)"">
         </p>
 
         <p class="input-telefone-responsavel">
           <label for="phone" class="label ">Telefone do responsável:</label>
-          <input type="tel" id="phone" class="input-padrao" required onkeypress="$(this).mask('(00) 9 0000-0000')"">
+          <input type="tel" id="phone" class="input-padrao" onkeypress="$(this).mask('(00) 9 0000-0000')"">
         </p>
         <fieldset class="input-telefone-responsavel">
           <label class="label" for="relationship">Parentesco:</label>

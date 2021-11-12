@@ -90,9 +90,23 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
       cpf: document.querySelector('#parentCpf').value,
       phone: document.querySelector('#parentPhone').value,
       relationship: document.querySelector('#relationship').value
-    }
+    }    
   }
-  console.log(student);
+  try {
+    let response = await fetch('https://impact-app.herokuapp.com/student/saveStudents', {
+      method: 'POST', 
+      header: { 'Content-Type': 'application/json;charset=utf-8',
+      'authorization': 'Bearer' + ' ' + sessionStorage.getItem('token')
+      }, 
+      body:(JSON.stringify('student'))
+    })
+    let retJson = await response.json()
+    console.log(retJson)
+    
+    
+  } catch (error) {
+    console.log(error)    
+  }
 })
 
 
