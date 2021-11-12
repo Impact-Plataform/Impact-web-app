@@ -58,11 +58,11 @@
       <div class="dados">
         <p class="input-nome-aluno">
           <label for="name" class="label">Nome completo:</label>
-          <input type="text" id="name" class="input-padrao tam1">
+          <input type="text" id="name" class="input-padrao tam1" required>
         </p>
 
         <p>
-          <label for="birthdate" class="label">Nascimento:</label>
+          <label for="birthdate" class="label">Data de Nascimento:</label>
           <input type="date" id="birthdate" required class="input-padrao">
         </p>
 
@@ -78,7 +78,7 @@
 
         <p>
           <label for="city_of_birth" class="label">Naturalidade:</label>
-          <input type="text" id="city_of_birth" class="input-padrao">
+          <input type="text" id="city_of_birth" class="input-padrao" required>
         </p>
 
         <p>
@@ -93,7 +93,7 @@
 
         <fieldset class="l3-ajuste">
           <label class="label" for="schooling">Escolaridade:</label>
-          <select id="schooling" name="schooling">
+          <select id="schooling" name="schooling" required>
             <option> </option>
             <option>Superior completo</option>
             <option>Superior cursando</option>
@@ -105,10 +105,10 @@
       </div>
 
       <!--DADOS DO RESPONSÁVEL-->
-      <div class="dados dados-responsavel">
+      <div id="parentsForm" class="dados dados-responsavel">
         <p class="input-nome-responsavel">
           <label for="name" class="label">Nome do responsável</label>
-          <input type="text" id="name" class="input-padrao tam1">
+          <input type="text" id="name" required class="input-padrao tam1">
         </p>
 
         <p>
@@ -122,7 +122,7 @@
         </p>
         <fieldset class="input-telefone-responsavel">
           <label class="label" for="relationshinp">Parentesco:</label>
-          <select id="relationshinp" name="relationshinp">
+          <select id="relationshinp"  required name="relationshinp">
             <option> </option>
             <option>Pai</option>
             <option>Mãe</option>
@@ -132,21 +132,21 @@
       </div>
 
       <!--DADOS CADASTRAIS-->
-      <div class="dados dados-cadastrais">
+      <div id="address" class="dados dados-cadastrais">
 
         <p>
           <label for="cep" class="label">CEP:</label>
-          <input type="text" id="cep" class="input-padrao l11" required placeholder="xxxxx-xxx">
+          <input type="text" id="cep" class="input-padrao l11" placeholder="xxxxx-xxx">
         </p>
 
         <p>
           <label for="street" class="label">Endereço:</label>
-          <input type="text" id="street" class="input-padrao l12 tam1">
+          <input type="text" id="street" required class="input-padrao l12 tam1">
         </p>
 
         <p>
           <label for="number" class="label">Nº da residência:</label>
-          <input type="text" id="number" class="input-padrao l13 tam3">
+          <input type="text" id="number" required class="input-padrao l13 tam3">
         </p>
 
 
@@ -157,7 +157,7 @@
 
         <fieldset class="ajuste-linha">
           <label class="label" for="marital_status">Estado civil:</label>
-          <select id="marital_status" name="marital_status">
+          <select id="marital_status" name="marital_status" required>
             <option> </option>
             <option>Solteiro(a)</option>
             <option>Casado(a)</option>
@@ -170,7 +170,7 @@
       <div class="dados">
         <fieldset>
           <label for="income" class="label">Renda individual mensal:</label>
-          <select name="income" id="income">
+          <select name="income" id="income" required>
             <option> </option>
             <option>
               Até 1 salário minímo
@@ -189,7 +189,7 @@
 
         <fieldset>
           <label for="family_income" class="label">Renda familiar mensal:</label>
-          <select name="family_income" id="family_income">
+          <select name="family_income" id="family_income" required>
             <option> </option>
             <option>
               Até 1 salário minímo
@@ -207,7 +207,7 @@
         </fieldset>
         <p class="input-numero-pessoas">
           <label for="family_members" class="label">Nº de pessoas na mesma casa:</label>
-          <select name="family_members" id="family_members">
+          <select name="family_members" id="family_members" required>
             <option> </option>
             <option>1</option>
             <option>2</option>
@@ -232,6 +232,7 @@
     
     </form>
   </main>
+  <script type="text/javascript" src="../js/cadastrar-estudantes.js"></script>
 </body>
 
 </html>

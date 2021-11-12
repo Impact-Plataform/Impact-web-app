@@ -24,7 +24,7 @@ var age = async function(dataNasc){
       }
     }
 
-    return idade
+    return idade > 18 ? true : false
 };
 
 
