@@ -108,21 +108,21 @@
       <div id="parentsForm" class="dados dados-responsavel">
         <p class="input-nome-responsavel">
           <label for="name" class="label">Nome do responsável</label>
-          <input type="text" id="name" required class="input-padrao tam1">
+          <input type="text" id="parentName" class="input-padrao tam1">
         </p>
 
         <p>
           <label for="cpf" class="label">CPF do responsável:</label>
-          <input type="text" id="cpf" class="input-padrao" required placeholder="xxx.xxx.xxx-xx">
+          <input type="text" id="parentCpf" class="input-padrao"placeholder="xxx.xxx.xxx-xx">
         </p>
 
         <p class="input-telefone-responsavel">
           <label for="phone" class="label ">Telefone do responsável:</label>
-          <input type="tel" id="phone" class="input-padrao" required placeholder="(xx) xxxxx-xxxx">
+          <input type="tel" id="parentPhone" class="input-padrao" placeholder="(xx) xxxxx-xxxx">
         </p>
         <fieldset class="input-telefone-responsavel">
-          <label class="label" for="relationshinp">Parentesco:</label>
-          <select id="relationshinp"  required name="relationshinp">
+          <label class="label" for="relationship">Parentesco:</label>
+          <select id="relationship" name="relationship">
             <option> </option>
             <option>Pai</option>
             <option>Mãe</option>
@@ -217,18 +217,18 @@
           </select>
         </p>
         <fieldset class="ajuste-linha">
-          <label class="label" id="government_aid">Recebe auxílio governamental:</label>
+          <label class="label" >Recebe auxílio governamental:</label>
           <input type="checkbox" id="government_aid" name="government_aid">
         </fieldset>
 
         <fieldset class="ajuste-linha">
-          <label class="label" id="family_members_with_disability">Pessoa com deficiência na família:</label>
+          <label class="label">Pessoa com deficiência na família:</label>
           <input type="checkbox" id="family_members_with_disability" name="family_members_with_disability">
         </fieldset>
 
       </div>
 
-      <input type="submit" value="Cadastrar Aluno" class="button-padrao">
+      <input id="cadastrar" type="submit" value="Cadastrar Aluno" class="button-padrao">
     
     </form>
   </main>
