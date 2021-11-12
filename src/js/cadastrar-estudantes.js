@@ -95,8 +95,9 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
   try {
     let response = await fetch('https://impact-app.herokuapp.com/student/saveStudents', {
       method: 'POST', 
-      header: { 'Content-Type': 'application/json;charset=utf-8',
-      'authorization': 'Bearer' + ' ' + sessionStorage.getItem('token')
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        'authorization': 'Bearer' + ' ' + sessionStorage.getItem('token')
       }, 
       body:(JSON.stringify('student'))
     })
