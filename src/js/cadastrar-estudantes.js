@@ -60,7 +60,7 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
   e.preventDefault()
   const student = {
     name: document.querySelector('#name').value,
-    birthdate: document.querySelector('#birthdate').value,
+    birthdate: document.querySelector('#birthdate').value.split('-').reverse().join('/'),
     city_of_birth: document.querySelector('#city_of_birth').value,
     schooling: document.querySelector('#schooling').value,
     marital_status: document.querySelector('#marital_status').value,
@@ -85,18 +85,16 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
     }
   }
   if (document.querySelector('#parentsForm').style.display === 'grid') {
-    student.parents = {
+    student.parent = {
       name: document.querySelector('#parentName').value,
       cpf: document.querySelector('#parentCpf').value,
       phone: document.querySelector('#parentPhone').value,
       relationship: document.querySelector('#relationship').value
     }
   }
+  console.log(student);
   try {
-    const url = 'http://localhost:5000/student/saveStudents'
-    // const url = 'https://impact-app.herokuapp.com/student/saveStudents'
-
-    let response = await fetch(url, {
+    let response = await fetch('https://impact-app.herokuapp.com/student/saveStudents', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -104,13 +102,18 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
       },
       body: JSON.stringify(student)
     })
-    console.log(response);
     let retJson = await response.json()
-    console.log(retJson)
-
-
+    if (response.status === 201) {
+      document.querySelector('#output').innerText = retJson.message
+      output.style.color = 'green'
+      document.querySelector('.form').reset()
+    } else {
+      document.querySelector('#output').innerText = retJson.error
+      output.style.color = 'red'
+    }
   } catch (error) {
-    console.log(error)
+    document.querySelector('#output').innerText = error.message
+    output.style.color = 'red'
   }
 })
 

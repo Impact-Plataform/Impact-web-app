@@ -10,7 +10,6 @@
 
   const retJson = await ret.json()
   let students = retJson.students
-  console.log(students);
   students.forEach(student => {insertStudent(student)})
 
   
