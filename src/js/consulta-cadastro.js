@@ -57,6 +57,8 @@ async function isMinor(dataNasc) {
     document.getElementById("parentCpf").value = student.parent.cpf
     document.getElementById("relationshinp").value = student.parent.relationship
     document.getElementById("parentPhone").value = student.parent.phone
+  }else{
+    document.querySelector('#parentForm').style.display = 'none'
   }
 
   document.getElementById("cep").value = student.address.cep
