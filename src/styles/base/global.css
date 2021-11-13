@@ -97,7 +97,7 @@ body{
 .principal {
   grid-area: main;
   font-size: var(--font-size-default);
-  padding: 1% 1% 1% 1%;
+  padding: 1% 0;
 }
 
 .icon{
