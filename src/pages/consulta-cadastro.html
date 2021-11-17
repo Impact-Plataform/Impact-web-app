@@ -27,32 +27,39 @@
     <span id="admin"></span>
   </header>
 
-  
+
   <nav class="menu">
-        
+
     <a href="/Impact-web-app/src/pages/dashboard.html"><img src="../assets/logo.png" class="logo"></a>
     <div class="wrapper">
-        <ul class="menu-list dashboard-itens">
-            <li><a href="./dashboard.html" id="alunos" class="link upper"><img src="../assets/dashboard.png" alt="imagem-alunos" class="icon">Alunos</a></li>
+      <ul class="menu-list dashboard-itens">
+        <li><a href="./dashboard.html" id="alunos" class="link upper"><img src="../assets/dashboard.png"
+              alt="imagem-alunos" class="icon">Alunos</a></li>
 
-            <li><a href="./dashboard.html?jedi" id="jedi" class="link upper"><img src="../assets/jedis.png" alt="imagem-jedis" class="icon">Jedis</a></li>
-        </ul>
+        <li><a href="./dashboard.html?jedi" id="jedi" class="link upper"><img src="../assets/jedis.png"
+              alt="imagem-jedis" class="icon">Jedis</a></li>
+      </ul>
 
-        <ul id="add" class="menu-list">
-            <li><a href="./cadastrar-estudantes.html" class="link"><img src="../assets/mais.png" alt="Adicionar" class="icon">Alunos</a></li>
-            
-            <li><a href="./adicionar-usuario.html" class="link"><img src="../assets/mais.png" alt="Adcionar" class="icon">Usuários</a></li>
-        </ul>
+      <ul id="add" class="menu-list">
+        <li><a href="./cadastrar-estudantes.html" class="link"><img src="../assets/mais.png" alt="Adicionar"
+              class="icon">Alunos</a></li>
+
+        <li><a href="./adicionar-usuario.html" class="link"><img src="../assets/mais.png" alt="Adcionar"
+              class="icon">Usuários</a></li>
+      </ul>
     </div>
-</nav>
+  </nav>
 
 
   <main class="principal">
-   <div class="logout">
-            <a href="#" id="logout"><img src="../assets/logout.png" alt="logout"></a>
-        </div>
+    <div class="logout">
+      <a href="#" id="logout"><img src="../assets/logout.png" alt="logout"></a>
+    </div>
     <header class="page-title">Consultar Cadastro</header>
-
+    <div id="editar">
+      <a href="#" id="editar-botao">
+        <img src="../assets/editar-cadastro.png" alt="ediar cadastro"> Editar</a>
+    </div>
     <form action="/Impact-web-app/src/pages/dashboard.html" class="form">
       <!--DADOS PESSOAIS-->
       <div class="dados">
@@ -232,8 +239,12 @@
 
       </div>
 
+      <div id="excluir-confirmar">
+      
+      </div> 
+      <span id="output"></span> 
       <input type="submit" value="Voltar" class="button-padrao">
-    
+
     </form>
 
 

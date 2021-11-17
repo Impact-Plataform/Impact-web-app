@@ -79,5 +79,22 @@ form label{
 .input-telefone-responsavel{
     grid-row-start: 2;
 }
+#editar{
+    text-align: center;
+}
+#editar a{
+    text-decoration: none;
+    color: black;
+}
+#excluir-confirmar{
+    text-align: center;
+}
+#excluir-confirmar a{
+    margin: 60px;
+    
+}
 
+#output{
+    text-align: center;
+}
 

@@ -92,7 +92,7 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
       relationship: document.querySelector('#relationship').value
     }
   }
-  console.log(student);
+
   try {
     let response = await fetch('https://impact-app.herokuapp.com/student/saveStudents', {
       method: 'POST',

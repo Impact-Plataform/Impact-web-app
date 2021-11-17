@@ -57,7 +57,7 @@ async function isMinor(dataNasc) {
     document.getElementById("parentCpf").value = student.parent.cpf
     document.getElementById("relationshinp").value = student.parent.relationship
     document.getElementById("parentPhone").value = student.parent.phone
-  }else{
+  } else {
     document.getElementById('parentForm').style.display = 'none'
   }
 
@@ -84,14 +84,98 @@ async function isMinor(dataNasc) {
 
 })()
 
-function validarCPF(el) {
-  if (!_cpf(el.value)) {
-    alert("CPF inválido!" + el.value);
-    // apaga o valor
-    el.value = "";
-  }
-}
+document.querySelector('#editar-botao').addEventListener('click', e => {
+  e.preventDefault
+  document.querySelectorAll('input').forEach(element => {
+    element.disabled = false
+  });
+  document.querySelectorAll('select').forEach(element => {
+    element.disabled = false
 
+  })
+
+  const cancelar = document.createElement('a')
+  cancelar.id = "descartar"
+  cancelar.innerHTML = `<img src="../assets/cancelar-cadastro.png" alt="cancelar edições">`
+
+  const salvar = document.createElement('a')
+  salvar.id = "salvar"
+  salvar.innerHTML = `<img src="../assets/salvar-cadastro.png " alt="salvar alterações">`
+
+  const editArea = document.querySelector('#excluir-confirmar')
+  editArea.appendChild(cancelar)
+  editArea.appendChild(salvar)
+
+  salvar.addEventListener('click', async e => {
+    const student = {
+      name: document.querySelector('#name').value,
+      birthdate: document.querySelector('#birthdate').value.split('-').reverse().join('/'),
+      city_of_birth: document.querySelector('#city_of_birth').value,
+      schooling: document.querySelector('#schooling').value,
+      marital_status: document.querySelector('#marital_status').value,
+      income: document.querySelector('#income').value,
+      family_income: document.querySelector('#family_income').value,
+      family_members: document.querySelector('#family_members').value,
+      government_aid: document.querySelector('#government_aid').checked,
+      family_members_with_disability: document.querySelector('#family_members_with_disability').checked,
+      documents: {
+        cpf: document.querySelector('#cpf').value,
+        rg: document.querySelector('#rg').value
+      },
+      address: {
+        cep: document.querySelector('#cep').value || '',
+        street: document.querySelector('#street').value,
+        number: document.querySelector('#number').value,
+        complement: document.querySelector('#complement').value || ''
+      },
+      contacts: {
+        phone: document.querySelector('#phone').value,
+        email: document.querySelector('#email').value
+      }
+    }
+    if (document.querySelector('#parentForm').style.display === 'grid') {
+      student.parent = {
+        name: document.querySelector('#parentName').value,
+        cpf: document.querySelector('#parentCpf').value,
+        phone: document.querySelector('#parentPhone').value,
+        relationship: document.querySelector('#relationship').value
+      }
+    }
+    id = id.substring(0,1)
+    console.log(id);
+    try {
+      let response = await fetch(`https://impact-app.herokuapp.com/student/updateStudents/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          'authorization': 'Bearer' + ' ' + sessionStorage.getItem('token')
+        },
+        body: JSON.stringify(student)
+      })      
+      let retJson = await response.json()
+      console.log(retJson);
+      if (response.status === 200) {
+        document.querySelector('#output').innerText = retJson.message
+        output.style.color = 'green'
+        document.querySelectorAll('input').forEach(element => {
+          element.disabled = true
+        });
+        document.querySelectorAll('select').forEach(element => {
+          element.disabled = true
+      
+        })
+      } else {
+        document.querySelector('#output').innerText = retJson.error
+        output.style.color = 'red'
+      }
+    } catch (error) {
+      document.querySelector('#output').innerText = error.message
+      output.style.color = 'red'
+    }
+
+
+  })
+})
 
 
 
