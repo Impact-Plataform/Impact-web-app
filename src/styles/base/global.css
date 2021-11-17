@@ -41,6 +41,13 @@ body{
   object-fit: contain;
   width: 10rem;
 }
+
+ .logout{
+    display:inline-block;
+    margin-left: 94%;
+    width: 1rem;   
+ }
+
 .logout  img {
   width: 2rem;
   height: 2rem;
