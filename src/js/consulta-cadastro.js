@@ -1,5 +1,5 @@
 let id = document.URL.split('?')[1]
-
+id = id.substring(0, 1)
 
 async function isMinor(dataNasc) {
   const dataAtual = new Date()
@@ -55,7 +55,7 @@ async function isMinor(dataNasc) {
   if (await isMinor(student.birthdate)) {
     document.getElementById("parentName").value = student.parent.name
     document.getElementById("parentCpf").value = student.parent.cpf
-    document.getElementById("relationshinp").value = student.parent.relationship
+    document.getElementById("relationship").value = student.parent.relationship
     document.getElementById("parentPhone").value = student.parent.phone
   } else {
     document.getElementById('parentForm').style.display = 'none'
@@ -73,6 +73,12 @@ async function isMinor(dataNasc) {
   } else {
     document.getElementById("family_members_with_disability").checked = false
   }
+  console.log(student.jedi);
+  if (student.jedi) {
+    document.getElementById("jedi-checkbox").checked = true
+  } else {
+    document.getElementById("jedi-checkbox").checked = false
+  }
 
   document.getElementById("family_income").value = student.family_income
   if (student.government_aid) {
@@ -83,6 +89,10 @@ async function isMinor(dataNasc) {
   document.getElementById("family_members").value = student.family_members
 
 })()
+
+if (sessionStorage.getItem('admin') !== 'true') {
+  document.querySelector('#editar').style.display = 'none'
+}
 
 document.querySelector('#editar-botao').addEventListener('click', e => {
   e.preventDefault
@@ -96,15 +106,23 @@ document.querySelector('#editar-botao').addEventListener('click', e => {
 
   const cancelar = document.createElement('a')
   cancelar.id = "descartar"
+  cancelar.style.cursor = "pointer"
   cancelar.innerHTML = `<img src="../assets/cancelar-cadastro.png" alt="cancelar edições">`
 
   const salvar = document.createElement('a')
   salvar.id = "salvar"
+  salvar.style.cursor = "pointer"
   salvar.innerHTML = `<img src="../assets/salvar-cadastro.png " alt="salvar alterações">`
 
   const editArea = document.querySelector('#excluir-confirmar')
-  editArea.appendChild(cancelar)
-  editArea.appendChild(salvar)
+  if (editArea.childElementCount === 0) {
+    editArea.appendChild(cancelar)
+    editArea.appendChild(salvar)
+  }
+  cancelar.addEventListener('click', e => {
+    e.preventDefault
+    window.location.reload()
+  })
 
   salvar.addEventListener('click', async e => {
     const student = {
@@ -118,6 +136,7 @@ document.querySelector('#editar-botao').addEventListener('click', e => {
       family_members: document.querySelector('#family_members').value,
       government_aid: document.querySelector('#government_aid').checked,
       family_members_with_disability: document.querySelector('#family_members_with_disability').checked,
+      jedi: document.querySelector('#jedi-checkbox').checked,
       documents: {
         cpf: document.querySelector('#cpf').value,
         rg: document.querySelector('#rg').value
@@ -133,7 +152,7 @@ document.querySelector('#editar-botao').addEventListener('click', e => {
         email: document.querySelector('#email').value
       }
     }
-    if (document.querySelector('#parentForm').style.display === 'grid') {
+    if (await isMinor(student.birthdate)) {
       student.parent = {
         name: document.querySelector('#parentName').value,
         cpf: document.querySelector('#parentCpf').value,
@@ -141,8 +160,7 @@ document.querySelector('#editar-botao').addEventListener('click', e => {
         relationship: document.querySelector('#relationship').value
       }
     }
-    id = id.substring(0,1)
-    console.log(id);
+    console.log(student);
     try {
       let response = await fetch(`https://impact-app.herokuapp.com/student/updateStudents/${id}`, {
         method: 'PUT',
@@ -151,9 +169,8 @@ document.querySelector('#editar-botao').addEventListener('click', e => {
           'authorization': 'Bearer' + ' ' + sessionStorage.getItem('token')
         },
         body: JSON.stringify(student)
-      })      
+      })
       let retJson = await response.json()
-      console.log(retJson);
       if (response.status === 200) {
         document.querySelector('#output').innerText = retJson.message
         output.style.color = 'green'
@@ -162,8 +179,8 @@ document.querySelector('#editar-botao').addEventListener('click', e => {
         });
         document.querySelectorAll('select').forEach(element => {
           element.disabled = true
-      
         })
+        editArea.innerHTML = ''
       } else {
         document.querySelector('#output').innerText = retJson.error
         output.style.color = 'red'
