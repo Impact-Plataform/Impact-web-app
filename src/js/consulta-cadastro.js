@@ -94,10 +94,25 @@ if (sessionStorage.getItem('admin') !== 'true') {
   document.querySelector('#editar').style.display = 'none'
 }
 
+ var contador=1;
+
+
 document.querySelector('#editar-botao').addEventListener('click', e => {
+    console.log (contador)
+  if(contador==1){
+    
+    document.querySelector('#editar-botao').addEventListener('click', e => {
+    e.preventDefault
+    window.location.reload() 
+  })};
+
+  contador++
+  
+
   e.preventDefault
   document.querySelectorAll('input').forEach(element => {
     element.disabled = false
+    
   });
   document.querySelectorAll('select').forEach(element => {
     element.disabled = false
@@ -192,7 +207,11 @@ document.querySelector('#editar-botao').addEventListener('click', e => {
 
 
   })
+
+
 })
+
+
 
 
 

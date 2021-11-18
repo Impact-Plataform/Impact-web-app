@@ -38,13 +38,26 @@
 
 function insertStudent(student) {
   const cell = document.createElement('tr')
-  cell.innerHTML = `
-    <td><a id="${student.student_id}" href="consulta-cadastro.html?${student.student_id}"><img src="../assets/edit.png" alt="Visualizar Cadastro"></a></td>
-    <td><a id="${student.student_id}" href="consulta-cadastro.html?${student.student_id}">${student.name}</a></td>
-    <td>${student.birthdate}</td>
-    <td>${student.contacts.phone}</td>
-    <td><a id="delete-${student.student_id}" onclick="deletar(${student.student_id})" href="#"><img src="../assets/deletar.png" alt="Visualizar Cadastro"></a></td>`
-  document.querySelector('tbody').appendChild(cell)
+   var adm=sessionStorage.getItem('admin');
+
+  if(adm=="true"){
+      cell.innerHTML = `
+        <td><a id="${student.student_id}" href="consulta-cadastro.html?${student.student_id}"><img src="../assets/edit.png" alt="Visualizar Cadastro"></a></td>
+        <td><a id="${student.student_id}" href="consulta-cadastro.html?${student.student_id}">${student.name}</a></td>
+        <td>${student.birthdate}</td>
+        <td>${student.contacts.phone}</td>
+        <td><a id="delete-${student.student_id}" onclick="deletar(${student.student_id})" href="#"><img src="../assets/deletar.png" alt="Visualizar Cadastro"></a></td>`
+    }
+    else{
+    cell.innerHTML = `
+        <td><a id="${student.student_id}" href="consulta-cadastro.html?${student.student_id}"><img src="../assets/edit.png" alt="Visualizar Cadastro"></a></td>
+        <td><a id="${student.student_id}" href="consulta-cadastro.html?${student.student_id}">${student.name}</a></td>
+        <td>${student.birthdate}</td>
+        <td>${student.contacts.phone}</td>
+        `
+    }   
+   document.querySelector('tbody').appendChild(cell)
+  
 }
 function clearTable() {
   document.querySelector('tbody').innerHTML = ''
