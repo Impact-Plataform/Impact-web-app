@@ -93,19 +93,11 @@ if (sessionStorage.getItem('admin') !== 'true') {
   document.querySelector('#editar').style.display = 'none'
 }
 
- var contador=1;
 
 
 document.querySelector('#editar-botao').addEventListener('click', e => {
-  if(contador==1){
-    
-    document.querySelector('#editar-botao').addEventListener('click', e => {
-    e.preventDefault
-    window.location.reload() 
-  })};
-
-  contador++
-  
+  const output = document.querySelector('#output')
+  output.innerHTML = ''
 
   e.preventDefault
   document.querySelectorAll('input').forEach(element => {
