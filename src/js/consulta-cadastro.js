@@ -1,5 +1,5 @@
-let id = document.URL.split('?')[1]
-id = id.substring(0, 1)
+let id = document.URL.split('?')[1].split('#')[0]
+
 
 async function isMinor(dataNasc) {
   const dataAtual = new Date()
@@ -73,7 +73,6 @@ async function isMinor(dataNasc) {
   } else {
     document.getElementById("family_members_with_disability").checked = false
   }
-  console.log(student.jedi);
   if (student.jedi) {
     document.getElementById("jedi-checkbox").checked = true
   } else {
@@ -98,7 +97,6 @@ if (sessionStorage.getItem('admin') !== 'true') {
 
 
 document.querySelector('#editar-botao').addEventListener('click', e => {
-    console.log (contador)
   if(contador==1){
     
     document.querySelector('#editar-botao').addEventListener('click', e => {
@@ -175,7 +173,6 @@ document.querySelector('#editar-botao').addEventListener('click', e => {
         relationship: document.querySelector('#relationship').value
       }
     }
-    console.log(student);
     try {
       let response = await fetch(`https://impact-app.herokuapp.com/student/updateStudents/${id}`, {
         method: 'PUT',

@@ -53,7 +53,6 @@ body{
   height: 2rem;
   object-fit: contain;
   margin: .5rem;
-  margin-left: 95%;
 }
 .menu{
   grid-area: nav;
