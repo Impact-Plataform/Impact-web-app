@@ -179,7 +179,9 @@ document.querySelector('#editar-botao').addEventListener('click', e => {
         document.querySelector('#output').innerText = retJson.message
         output.style.color = 'green'
         document.querySelectorAll('input').forEach(element => {
-          element.disabled = true
+          if (element.type !== 'submit'){
+            element.disabled = true
+          }
         });
         document.querySelectorAll('select').forEach(element => {
           element.disabled = true
