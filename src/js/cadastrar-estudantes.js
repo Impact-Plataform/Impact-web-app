@@ -32,10 +32,10 @@ document.querySelector('#birthdate').addEventListener('blur', async () => {
     document.querySelector('#parentsForm').style.display = 'none'
   } else {
     document.querySelector('#parentsForm').style.display = 'grid'
-    document.querySelector('#parentName').required = true;
-    document.querySelector('#parentCpf').required = true;
-    document.querySelector('#parentPhone').required = true;
-    document.querySelector('#relationship').required = true;
+    // document.querySelector('#parentName').required = true;
+    // document.querySelector('#parentCpf').required = true;
+    // document.querySelector('#parentPhone').required = true;
+    // document.querySelector('#relationship').required = true;
   }
 })
 
