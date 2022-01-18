@@ -10,7 +10,7 @@
 
   const retJson = await ret.json()
   let students = retJson.students
-  students.sort();
+  students.sort((a, b) => a.name.localeCompare(b.name))
   students.forEach(student => { insertStudent(student) })
 
 
